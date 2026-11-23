@@ -1,0 +1,16 @@
+services:
+  angular-nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REPO_URL: https://github.com/cristianavendano-code/nombres-angular.git
+        BRANCH: main
+    image: nombres-angular-nginx:latest
+    container_name: nombres_angular_app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+
+    
